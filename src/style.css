@@ -25,3 +25,13 @@ body {
 ::placeholder {
   color: rgb(255, 255, 255, 0.8);
 }
+
+.search-form-button {
+  background: #532b50;
+  color: white;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-left: 10px;
+}
