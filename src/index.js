@@ -6,6 +6,10 @@ function newTemperatureCity(response) {
   let city = document.querySelector("#city");
   let newCity = response.data.city;
   city.innerHTML = newCity;
+
+  let weatherDescription = document.querySelector("#description");
+  let weatherResponse = response.data.condition.description;
+  weatherDescription.innerHTML = weatherResponse;
 }
 
 function citySearch(city) {
