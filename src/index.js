@@ -1,15 +1,18 @@
 function newTemperatureCity(response) {
   let currentTemperature = document.querySelector(".weather-temperature");
-  let replacementTemperature = Math.round(response.data.temperature.current);
-  currentTemperature.innerHTML = replacementTemperature;
+  currentTemperature.innerHTML = Math.round(response.data.temperature.current);
 
   let city = document.querySelector("#city");
-  let newCity = response.data.city;
-  city.innerHTML = newCity;
+  city.innerHTML = response.data.city;
 
   let weatherDescription = document.querySelector("#description");
-  let weatherResponse = response.data.condition.description;
-  weatherDescription.innerHTML = weatherResponse;
+  weatherDescription.innerHTML = response.data.condition.description;
+
+  let humidityPercentage = document.querySelector("#humidity");
+  humidityPercentage.innerHTML = `${response.data.temperature.humidity}%`;
+
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${response.data.wind.speed}km\h`;
 }
 
 function citySearch(city) {
