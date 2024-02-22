@@ -69,9 +69,8 @@ main {
   display: flex;
 }
 
-.material-symbols-outlined {
-  font-size: 40px;
-  margin-top: 30px;
+.weather-app-icon {
+  font-size: 80px;
 }
 
 .weather-temperature {

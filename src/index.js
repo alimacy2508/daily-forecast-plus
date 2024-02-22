@@ -17,6 +17,9 @@ function newTemperatureCity(response) {
   let date = new Date(response.data.time * 1000);
   let newDate = document.querySelector("#current-date");
   newDate.innerHTML = formatDate(date);
+
+  let iconImage = document.querySelector("#icon");
+  iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function formatDate(date) {
