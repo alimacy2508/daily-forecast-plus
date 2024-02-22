@@ -2,7 +2,10 @@ function newCity(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#search-form-input");
   let city = document.querySelector("#city");
-  city.innerHTML = cityElement.value;
+
+  let cityCapital = cityElement.value.charAt(0).toUpperCase();
+  let newCity = cityCapital + cityElement.value.slice(1);
+  city.innerHTML = newCity;
 
   let apiKey = "bbco0f50t952db4519a3613cfbc4bfb3";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityElement.value}&key=${apiKey}&units=metric`;
@@ -11,7 +14,7 @@ function newCity(event) {
 
 function newTemperature(response) {
   let currentTemperature = document.querySelector(".weather-temperature");
-  let replacementTemperature = response.data.temperature.current;
+  let replacementTemperature = Math.round(response.data.temperature.current);
   currentTemperature.innerHTML = replacementTemperature;
 }
 
