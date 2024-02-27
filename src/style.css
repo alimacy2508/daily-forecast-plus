@@ -82,6 +82,27 @@ main {
   font-size: 25px;
 }
 
+.weather-forecast {
+  text-align: center;
+  display: flex;
+  font-size: 18px;
+}
+
+.weather-temperatures {
+  display: flex;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.weather-temperature-max {
+  margin-right: 10px;
+  padding: 0;
+}
+
+.weather-temperature-min {
+  opacity: 0.5;
+}
+
 a {
   color: #532b50;
 }
