@@ -85,13 +85,21 @@ main {
 .weather-forecast {
   text-align: center;
   display: flex;
+  justify-content: space-between;
   font-size: 18px;
+  margin: 0 auto;
+}
+
+.forecast-icon img {
+  font-size: 12px;
+  width: 50%;
 }
 
 .weather-temperatures {
   display: flex;
   font-size: 16px;
   margin-left: 5px;
+  color: #532b50;
 }
 
 .weather-temperature-max {

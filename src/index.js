@@ -58,4 +58,33 @@ function searchInput(event) {
 let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", searchInput);
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class = "forecast-day">
+  <div class = "current-day"> ${day}</div>
+        <div class = "forecast-icon">
+          <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"/>
+        </div>
+        <div class = "weather-temperatures">
+        <div class = "weather-temperature-max">
+          20°C
+        </div>
+        <div class = "weather-temperature-min">
+          14°C
+        </div>
+        </div>
+        </div>`;
+  });
+
+  forecastElement = document.querySelector(".weather-forecast");
+  forecastElement.innerHTML = forecastHTML;
+}
+
 citySearch("London");
+displayForecast();
