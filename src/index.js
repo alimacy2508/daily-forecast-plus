@@ -60,6 +60,13 @@ function searchInput(event) {
 let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", searchInput);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "bbco0f50t952db4519a3613cfbc4bfb3";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -70,12 +77,13 @@ function displayForecast(response) {
   console.log(response.data);
   let forecastHTML = "";
 
-  response.data.daily.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class = "forecast-day">
-  <div class = "current-day"> Tue </div>
+  <div class = "current-day">${formatDay(day.time)}</div>
         <div class = "forecast-icon">
           <img src = "${day.condition.icon_url}"/>
         </div>
@@ -88,6 +96,7 @@ function displayForecast(response) {
         </div>
         </div>
         </div>`;
+    }
   });
 
   forecastElement = document.querySelector(".weather-forecast");
