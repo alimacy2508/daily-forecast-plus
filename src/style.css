@@ -7,6 +7,7 @@ body {
   background: rgb(255, 255, 255, 0.6);
   max-width: 650px;
   margin: 0 auto;
+  margin-top: 50px;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -20,6 +21,20 @@ body {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+
+#title {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  color: #532b50;
+  margin-bottom: 0px;
+}
+
+.witch-hat {
+  width: 50px;
+  display: flex;
+  margin-top: 0px;
 }
 
 header {
