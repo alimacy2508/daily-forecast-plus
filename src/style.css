@@ -5,7 +5,7 @@ body {
 
 .weather-app {
   background: rgb(255, 255, 255, 0.6);
-  width: 70%;
+  max-width: 650px;
   margin: 0 auto;
   border-radius: 20px;
   padding: 20px;
@@ -14,7 +14,7 @@ body {
 
 .forecast-section {
   background: rgb(255, 255, 255, 0.6);
-  width: 70%;
+  max-width: 650px;
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 20px;
