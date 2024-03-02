@@ -68,25 +68,23 @@ function getForecast(city) {
 
 function displayForecast(response) {
   console.log(response.data);
-
-  let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
   let forecastHTML = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
   <div class = "forecast-day">
-  <div class = "current-day"> ${day}</div>
+  <div class = "current-day"> Tue </div>
         <div class = "forecast-icon">
-          <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"/>
+          <img src = "${day.condition.icon_url}"/>
         </div>
         <div class = "weather-temperatures">
         <div class = "weather-temperature-max">
-          20°C
+          ${Math.round(day.temperature.maximum)}°C
         </div>
         <div class = "weather-temperature-min">
-          14°C
+          ${Math.round(day.temperature.minimum)}°C
         </div>
         </div>
         </div>`;
