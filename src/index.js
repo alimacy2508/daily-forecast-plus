@@ -8,6 +8,14 @@ function newTemperatureCity(response) {
   let weatherDescription = document.querySelector("#description");
   weatherDescription.innerHTML = response.data.condition.description;
 
+  let feelsLike = document.querySelector("#feels-like");
+  feelsLike.innerHTML = `${Math.round(response.data.temperature.feels_like)}°C`;
+
+  let airPressure = document.querySelector("#air-pressure");
+  airPressure.innerHTML = `${Math.round(
+    response.data.temperature.pressure
+  )}hPa`;
+
   let humidityPercentage = document.querySelector("#humidity");
   humidityPercentage.innerHTML = `${response.data.temperature.humidity}%`;
 

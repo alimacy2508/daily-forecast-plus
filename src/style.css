@@ -37,8 +37,16 @@ header {
   padding: 15px 25px;
   font-size: 16px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid;
   margin-left: 10px;
+  transition: all 200ms ease-in-out;
+}
+
+.search-form-button:hover {
+  color: #532b50;
+  border: 1px solid #532b50;
+  background-color: white;
+  cursor: pointer;
 }
 
 main {
@@ -63,6 +71,24 @@ main {
 
 .weather-app-details strong {
   color: #532b50;
+}
+
+.details-container {
+  display: flex;
+  justify-content: end;
+  color: #532b50;
+}
+
+.details-container strong {
+  color: black;
+}
+
+#wind-speed {
+  margin-right: 10px;
+}
+
+.material-symbols-outlined {
+  margin-right: 5px;
 }
 
 .weather-app-temperature-container {
